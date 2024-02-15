@@ -1,0 +1,12 @@
+<div class="face-snap-card">
+  <h2>{{ faceSnap.title }}</h2>
+  <p>Mise en Ligne le {{ faceSnap.createDate }}</p>
+  <img [src]="faceSnap.imageUrl" [alt]="faceSnap.title" />
+  <p>{{ faceSnap.description }}</p>
+  <p *ngIf="faceSnap.localisation">Photo Prise à / ou originaire de ({{faceSnap.localisation}})</p>
+  <p >
+    <button (click)="onSnap()" class="btn btn-info">{{ buttonSnap }}</button>
+    <button (click)="noSnap()" class="btn btn-warning " [disabled]="isAvailable" >{{ buttonUnSnap }}</button>
+    👌 Likes: {{ faceSnap.snaps }}
+  </p>
+</div>
